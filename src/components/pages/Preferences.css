@@ -1,0 +1,202 @@
+#settings {
+  font-family: Arial, Helvetica, sans-serif;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: calc(100hh - 3px);
+  height: calc(100vh - 3px);
+  overflow: hidden;
+}
+#settings .ctrls {
+  -webkit-app-region: drag;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  display: flex;
+  justify-content: flex-end;
+  opacity: 0.7;
+}
+#settings .close {
+  -webkit-app-region: no-drag;
+  display: inline-block;
+  padding: 8px 15px 4px 15px;
+}
+#settings .close:hover {
+  cursor: pointer;
+  background-color: rgb(219, 64, 64);
+}
+#settings .close:hover svg {
+  color: rgb(255, 255, 255);
+}
+
+#settings header .title {
+  font-size: 28px;
+  line-height: 100%;
+  text-transform: capitalize;
+  padding: 48px 48px 12px 48px;
+}
+#settings header .subtitle {
+  font-size: 13px;
+  line-height: 110%;
+  min-height: 16px;
+}
+#settings .container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  padding: 32px 0px 0px 0px;
+}
+#settings .container .left {
+  flex: 0 0 360px;
+  min-width: 260px;
+  padding: 0px 16px 0px 64px;
+}
+#settings .container .right {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 16px 0px 64px;
+}
+#settings .buttons {
+  text-align: right;
+  padding: 24px 16px 24px 16px;
+}
+#settings .buttons.disabled {
+  opacity: 0.3;
+}
+#settings-scrollbar {
+  overflow-y: scroll;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+#settings label {
+  font-size: 10px;
+  margin-right: 8px;
+  text-transform: uppercase;
+}
+#settings .options {
+  padding-top: 6px;
+  padding-bottom: 24px;
+}
+#settings input[type="radio"] {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-top: -2px;
+}
+#settings input[type="checkbox"] {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-top: 1px;
+  /* margin-top: -2px; */
+}
+#settings .label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+#settings .explanation {
+  font-size: 11px;
+  padding-left: 1px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+#settings .folder-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  /* margin-top: 12px; */
+}
+#settings .folder-wrapper:not(:first-child) {
+  padding-top: 10px;
+}
+#settings .folder-label div:not(.btn) {
+  line-height: 100%;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  display: inline-block;
+  vertical-align: middle;
+}
+#settings .folder-label .btn {
+  opacity: 0.7;
+  line-height: 100%;
+  padding: 5px;
+  display: inline-block;
+  vertical-align: middle;
+}
+#settings .folder.remote .btn.positive svg {
+  color: rgb(0, 98, 163);
+}
+#settings .folder-label .btn.disabled {
+  opacity: 0.3;
+}
+#settings .folder-label .btn:not(.disabled):hover {
+  opacity: 1;
+  cursor: pointer;
+}
+#settings .folder {
+  position: relative;
+  display: block;
+  margin-bottom: 2px;
+  /* width: 100%; */
+  max-width: 360px;
+  /* width: 320px; */
+}
+#settings .folder.remote {
+  width: 100%;
+}
+#settings .folder .btns {
+  position: absolute;
+  top: 0;
+  right: -18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#settings .folder .btns img {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+#settings .folder .btn {
+  opacity: 1;
+  padding: 6px 8px 7px 8px;
+}
+#settings .folder .btn svg {
+  vertical-align: middle;
+}
+#settings .folder .btn.disabled {
+  opacity: 0.3;
+}
+#settings .folder .btn:not(.disabled):hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+#settings .folder input {
+  background: none;
+  border: none;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.04);
+  color: rgb(0, 98, 163);
+  margin: 0;
+  font-size: 11px;
+  padding: 10px 12px 10px 12px;
+  width: 100%;
+}
+#settings button span {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+@media (prefers-color-scheme: dark) {
+  #settings {
+    background-color: rgb(40, 40, 40);
+  }
+  #settings .folder input {
+    background: rgba(220, 220, 220, 0.06);
+    color: rgb(17, 151, 240);
+  }
+  #settings .folder.remote .btn.positive svg {
+    color: rgb(17, 151, 240);
+  }
+}

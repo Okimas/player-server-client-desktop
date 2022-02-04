@@ -1,0 +1,45 @@
+#about {
+  font-family: Arial, Helvetica, sans-serif;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+#about .close {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  opacity: 0.7;
+  padding: 8px 15px 4px 15px;
+}
+#about .close:hover {
+  cursor: pointer;
+  background-color: rgb(219, 64, 64);
+}
+#about .close:hover svg {
+  color: rgb(255, 255, 255);
+}
+
+#about header.title {
+  padding: 48px 48px 0px 48px;
+  font-size: 28px;
+  line-height: 100%;
+  text-transform: capitalize;
+}
+#about main.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 64px 64px 64px;
+}
+/* #about main.content header {
+  background-color: chartreuse;
+} */
+#about main.content main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: crimson;
+}
+#about main.content main div {
+  background-color: cyan;
+}

@@ -1,0 +1,171 @@
+#player-control {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  /* width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 12px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px; */
+}
+#player-control .prev,
+#player-control .next {
+  transition: opacity 0.3s ease;
+  padding: 8px 12px 4px 12px;
+  background-color: rgb(0, 0, 0);
+}
+#player-control .prev {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+#player-control .next {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+#player-control .prev svg,
+#player-control .next svg {
+  opacity: 0.5;
+}
+#player-control .prev:not(.disabled):hover svg,
+#player-control .next:not(.disabled):hover svg {
+  opacity: 1;
+}
+#player-control .active {
+  position: relative;
+  min-width: 240px;
+}
+/* #player.miniplayer #player-control .active {
+  max-width: 240px;
+} */
+
+#player-control .active .profile {
+  font-size: 13px;
+  text-transform: uppercase;
+  padding-left: 10px;
+  padding-bottom: 4px;
+  line-height: 100%;
+  text-shadow: 2px 2px 4px #000000;
+}
+#player-control .active .container {
+  padding: 12px 12px 16px 12px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: rgb(30, 30, 30);
+  border-top: 1px solid rgb(50, 50, 50);
+  border-left: 1px solid rgb(50, 50, 50);
+  border-right: 1px solid rgb(50, 50, 50);
+}
+#player-control .active .ctrls {
+  text-align: right;
+  /* position: absolute; */
+  /* top: 12px;
+  right: 8px; */
+}
+#player-control .active .ctrls .ctrl {
+  opacity: 0.7;
+  display: inline-block;
+  padding: 0px 8px;
+}
+#player-control .active .ctrls .ctrl:hover {
+  opacity: 1;
+}
+#player-control .active .collection {
+  font-size: 9px;
+  text-transform: uppercase;
+  line-height: 100%;
+  padding-bottom: 3px;
+}
+#player-control .active .title {
+  font-size: 16px;
+  /* line-height: 100%; */
+  max-width: 240px;
+  overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#player-control .active .progress {
+  margin-top: 8px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#player-control .active .progressbar {
+  width: 0%;
+  height: 3px;
+  background-color: rgb(40, 145, 243);
+}
+#player-control .active .times {
+  margin-top: 3px;
+  font-size: 10px;
+  color: rgb(200, 200, 200);
+}
+#player-control .active .times div {
+  display: inline-block;
+}
+#player-control .active .times div:last-child {
+  float: right;
+}
+
+#player-control .volume {
+  z-index: 1;
+  position: absolute;
+  top: -24px;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: rgb(30, 30, 30);
+}
+#player-control .volume.closed {
+  display: none;
+}
+#player-control .volume input[type="range"] {
+  width: 100%;
+}
+
+#player-control .subtitles {
+  position: absolute;
+  right: 0px;
+}
+#player-control .subtitles .subtitles-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  font-weight: 500;
+  background-color: rgb(10, 10, 10);
+  border-bottom: rgb(25, 25, 25) 1px solid;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+#player-control .subtitles .scroller {
+  max-height: 300px;
+  max-width: 100%;
+  overflow-y: scroll;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+#player-control .subtitles .subtitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgb(220, 220, 220);
+  text-transform: uppercase;
+  padding: 10px 16px;
+  /* display: inline-block; */
+  background-color: rgb(10, 10, 10);
+  border: 1px solid rgb(25, 25, 25);
+}
+#player-control .subtitles .subtitle.checked {
+  color: rgb(16, 141, 224);
+}
+#player-control .subtitles.closed {
+  display: none;
+}
+#player-control .subtitles .subtitle:hover {
+  cursor: pointer;
+  background-color: rgb(30, 30, 30);
+}
+#player-control .subtitles .subtitle div {
+  display: inline-block;
+}

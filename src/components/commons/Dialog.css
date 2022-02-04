@@ -1,0 +1,98 @@
+#dialog {
+  z-index: 2000;
+  -webkit-app-region: no-drag;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+}
+#dialog .close {
+  opacity: 0.7;
+  position: absolute;
+  top: 6px;
+  right: 10px;
+}
+#dialog .close:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+#dialog .wrapper {
+  padding: 16px 16px 16px 16px;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.3);
+  background-color: rgb(255, 255, 255);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  min-width: 280px;
+  max-width: 360px;
+}
+#dialog .title {
+  font-size: 15px;
+  font-weight: 500;
+}
+#dialog .message {
+  font-size: 13px;
+  line-height: 120%;
+  padding: 6px 0px 16px 0px;
+}
+#dialog .dialog-buttons {
+  margin-top: 6px;
+  text-align: right;
+  padding: 6px 6px;
+}
+#dialog .dialog-buttons button {
+  color: rgb(255, 255, 255);
+  background-color: rgb(20, 131, 241);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  font-weight: 500;
+  padding: 6px 16px;
+  min-width: 70px;
+}
+#dialog .dialog-buttons button:not(:last-child) {
+  margin-right: 6px;
+}
+#dialog .dialog-buttons button:hover {
+  cursor: pointer;
+  background-color: rgb(19, 137, 255);
+}
+#dialog .dialog-buttons button span {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+#dialog .dialog-buttons button.rounded {
+  border-radius: 4px;
+}
+#dialog .dialog-buttons button.fullwidth {
+  width: 100%;
+  padding: 8px 16px;
+}
+#dialog.hidden {
+  display: none;
+}
+
+/* DARK THEME */
+#dialog.dark {
+  color: rgb(255, 255, 255);
+}
+#dialog.dark .wrapper {
+  background-color: rgb(80, 80, 80);
+}
+#dialog.dark .title {
+  color: rgb(255, 255, 255);
+}
+#dialog.dark .message {
+  color: rgb(222, 222, 222);
+}
+#dialog.dark .close svg {
+  color: rgb(255, 255, 255);
+}
+#dialog.dark .dialog-buttons button {
+  color: rgb(255, 255, 255);
+  background-color: rgb(20, 131, 241);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+#dialog.dark .dialog-buttons button:hover {
+  background-color: rgb(19, 137, 255);
+}

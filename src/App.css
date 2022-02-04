@@ -1,38 +1,145 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#app {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: calc(100hh - 3px);
+  height: calc(100vh - 3px);
+  color: rgb(0, 0, 0);
+  background-color: rgb(230, 230, 230);
 }
 
-.App-link {
-  color: #61dafb;
+.scrollbar {
+  margin-right: 4px;
+}
+.scrollbar:hover {
+  margin-right: 0px;
+}
+:not(.scrollbar:hover)::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar:hover::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 98, 163, 0.1);
+  border-radius: 2px;
+}
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 98, 163, 0.7);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.button-container button:not(:first-child):not(.link) {
+  margin-left: 4px;
+}
+.button-container button.link:not(:first-child) {
+  margin-left: 2px;
+}
+button {
+  background: none;
+  border: none;
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+  padding: 6px 16px;
+}
+button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+button.link {
+  padding: 6px 10px;
+}
+button.gray {
+  background-color: rgb(120, 120, 120);
+  color: rgb(255, 255, 255);
+}
+button.accent {
+  color: rgb(0, 98, 163);
+}
+button.danger {
+  color: rgb(202, 50, 23);
+}
+button.link:hover {
+  color: rgb(0, 98, 163);
+}
+button.gray:hover {
+  background-color: rgb(80, 80, 80);
+}
+button.accent:hover {
+  color: rgb(0, 98, 163);
+}
+button.danger:hover {
+  color: rgb(248, 58, 25);
+}
+button svg {
+  margin-left: -6px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+button.link svg {
+  margin-left: 0px;
+}
+button span {
+  vertical-align: middle;
+}
+button.rounded {
+  border-radius: 4px;
+}
+button.fullwidth {
+  width: 100%;
+}
+
+a:link,
+a:visited,
+a:active {
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgb(0, 98, 163);
+  text-transform: lowercase;
+}
+a:hover {
+  color: rgb(0, 112, 187);
+}
+
+/* LISTS */
+#app main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow-y: hidden;
+}
+#app main .scroller {
+  padding-top: 16px;
+  overflow-y: scroll;
+}
+
+@media (prefers-color-scheme: dark) {
+  #app {
+    color: rgb(255, 255, 255);
+    background-color: rgb(40, 40, 40);
   }
-  to {
-    transform: rotate(360deg);
+  button.link {
+    color: rgb(230, 230, 230);
+  }
+  button.accent {
+    color: rgb(23, 148, 231);
+  }
+  button.danger {
+    color: rgb(248, 66, 34);
+  }
+  button.link:hover {
+    color: rgb(0, 126, 209);
+  }
+  button.gray:hover {
+    background-color: rgb(80, 80, 80);
+  }
+  button.accent:hover {
+    color: rgb(5, 155, 255);
+  }
+  button.danger:hover {
+    color: rgb(248, 58, 25);
   }
 }

@@ -1,21 +1,35 @@
 {
   "name": "media-learning-center",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "main": "public/electron.js",
+  "homepage": "./",
+  "description": "Media Learning Center for Desktop",
+  "author": {
+    "name": "OkimasDev",
+    "email": "okimas.br@gmail.com",
+    "url": "https://github.com/Okimas"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.25.0",
+    "electron-window-state": "^5.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
+    "swiper": "^8.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron": "wait-on tcp:3000 && electron .",
+    "dev": "concurrently -k \"SET BROWSER=none && npm start\" \"npm:electron\"",
+    "electronBuilder": "electron-builder"
   },
   "eslintConfig": {
     "extends": [
@@ -33,6 +47,72 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "electron": "^17.0.0",
+    "electron-builder": "^22.14.5",
+    "wait-on": "^6.0.0"
+  },
+  "build": {
+    "appId": "com.okimas.mlc",
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    },
+    "extraResources": [
+      {
+        "from": "public/electron/scanner.js",
+        "to": "scanner/worker.js"
+      },
+      {
+        "from": "public/electron/constants.js",
+        "to": "scanner/constants.js"
+      },
+      {
+        "from": "public/electron/utils.js",
+        "to": "scanner/utils.js"
+      },
+      {
+        "from": "public/electron/logger.js",
+        "to": "scanner/logger.js"
+      }
+    ],
+    "extraFiles": [
+      {
+        "from": "src/assets/images/logo-512x512.png",
+        "to": "logo.png"
+      }
+    ],
+    "productName": "Media Learning Center",
+    "target": "NSIS",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "src/assets/images/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "src/assets/images/icon.ico",
+      "uninstallerIcon": "src/assets/images/icon.ico",
+      "installerHeader": "src/assets/images/icon.ico",
+      "installerHeaderIcon": "src/assets/images/icon.ico",
+      "uninstallDisplayName": "Player Desktop",
+      "deleteAppDataOnUninstall": true,
+      "packElevateHelper": false,
+      "unicode": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Media Learning Center"
+    },
+    "asarUnpack": [
+      "node_modules/axios/**/*",
+      "node_modules/follow-redirects/**/*"
     ]
   }
 }

@@ -1,0 +1,63 @@
+#titlebar {
+  -webkit-app-region: drag;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+/* #titlebar.main {
+  background-color: rgb(200, 200, 200);
+} */
+
+#titlebar .logo {
+  width: 16px;
+  height: 16px;
+  margin: 4px 10px;
+  background-image: url(../../assets/images/logo-512x512.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+#titlebar svg {
+  color: rgb(0, 0, 0);
+  display: block;
+}
+#titlebar .appName {
+  flex: 1;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding-left: 2px;
+}
+#titlebar .winCtrls {
+  -webkit-app-region: no-drag;
+  display: flex;
+}
+#titlebar .winCtrls .ctrl {
+  padding: 8px 15px;
+  opacity: 0.7;
+}
+#titlebar .winCtrls .ctrl:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#titlebar .winCtrls .ctrl:last-child:hover {
+  background-color: rgb(219, 64, 64);
+}
+#titlebar .winCtrls .ctrl:last-child:hover svg {
+  color: rgb(255, 255, 255);
+}
+
+@media (prefers-color-scheme: dark) {
+  /* #titlebar.main {
+    background-color: rgb(20, 20, 20);
+  } */
+  #titlebar .appName {
+    color: rgb(200, 200, 200);
+  }
+  #titlebar svg {
+    color: rgb(255, 255, 255);
+  }
+  #titlebar .winCtrls .ctrl:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}

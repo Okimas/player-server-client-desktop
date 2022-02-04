@@ -1,0 +1,126 @@
+#preview {
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  /* border: 1px solid #333; */
+}
+#preview .preview-header {
+  -webkit-app-region: drag;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+#preview .preview-header:hover {
+  opacity: 1;
+}
+#preview .preview-controls {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 64px;
+  display: flex;
+  justify-content: center;
+}
+#preview .preview-controls:hover {
+  opacity: 1;
+}
+#preview .preview-controls .preview-item {
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+  background-color: rgb(180, 180, 180);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#preview .preview-controls .preview-item.active {
+  width: 62px;
+  height: 62px;
+  border: red solid 1px;
+}
+/* #preview .preview-controls .preview-item {
+  width: 64px;
+  background-color: rgb(180, 180, 180);
+} */
+
+#preview .preview-header .preview-window {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1px 0px;
+}
+#preview .preview-header .preview-window:hover {
+  opacity: 1;
+}
+#preview .preview-header .preview-window .ctrl {
+  -webkit-app-region: no-drag;
+  padding: 6px 15px 4px 15px;
+  opacity: 0.7;
+}
+#preview .preview-header .preview-window .ctrl:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+#preview .preview-header .preview-window .ctrl:last-child:hover {
+  background-color: rgb(219, 64, 64);
+}
+
+#preview-video,
+#preview-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 1px;
+  bottom: 1px;
+}
+#preview-video video {
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#preview-image img {
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#preview-video.hidden,
+#preview-image.hidden,
+#preview-loading.hidden {
+  display: none;
+}
+
+#preview-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 1px;
+  bottom: 1px;
+}
+#preview-loading div {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+}

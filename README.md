@@ -10,10 +10,12 @@ This is a personal project that cames when I started learn Japanese. In addition
     <img src="src/assets/images/screenshot-1.png" width="45%"/>
     <img src="src/assets/images/screenshot-2.png" width="45%"/>
 </p>
+
 <p align="center">
     <img src="src/assets/images/screenshot-3.png" width="45%"/>
     <img src="src/assets/images/screenshot-4.png" width="45%"/>
 </p>
+
 <p align="center">
     <img src="src/assets/images/screenshot-5.png" width="45%"/>
     <img src="src/assets/images/screenshot-6.png" width="45%"/>
